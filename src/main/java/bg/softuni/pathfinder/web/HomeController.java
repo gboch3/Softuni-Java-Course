@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Random;
 
-/**
+/*
  * Controller handling the info pages - home, about, contact
  */
 
