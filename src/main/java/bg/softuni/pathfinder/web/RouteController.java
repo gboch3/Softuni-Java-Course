@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-/**
+/*
  * Controller to handle all things route relates
  */
 
@@ -20,10 +20,9 @@ public class RouteController {
         this.routeService = routeService;
     }
 
-    /**
+    /*
      * Method to handle the listing of all routes.
      *
-     * @param model the Model for the view
      * @return the list routes view
      */
 
