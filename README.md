@@ -1,1 +1,2 @@
-# Softuni-Java-Course
+# Softuni Java Web Course
+## Spring Fundamentals
