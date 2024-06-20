@@ -1,2 +1,1 @@
-# Spring Fundamentals Projects
-## Softuni Java Web Course
+# Thymeleaf Demo Project
