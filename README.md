@@ -1,2 +1,2 @@
-# Project Pathfinder
+# Pathfinder Project 
 ## Workshop Authentication
