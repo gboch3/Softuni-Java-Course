@@ -1,2 +1,1 @@
-# Spring Fundamentals Projects
-## Softuni Java Web Course
+In this example we explained what is dependency injection and how the Spring IoC works.
