@@ -1,1 +1,2 @@
-# Softuni-Java-Course
+# Spring Boot Example Project
+## Spring Fundamentals
