@@ -1,2 +1,2 @@
-# Spring Fundamentals Projects
-## Softuni Java Web Course
+# Cookies and Session Demo Project
+## State Management
