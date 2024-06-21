@@ -1,2 +1,3 @@
 # Mobilele Project 
-## Validation Implementation
+## Spring MVC with Thymeleaf Lab
+Validation Implementation
