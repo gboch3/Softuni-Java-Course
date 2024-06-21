@@ -1,3 +1,3 @@
 # Mobilele Project 
-## Spring MVC with Thymeleaf Lab
-Validation Implementation
+## State Management Lab
+Session Implementation
