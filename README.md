@@ -1,2 +1,2 @@
 # Pathfinder Project 
-## Spring MVC
+## Spring MVC Exercise
