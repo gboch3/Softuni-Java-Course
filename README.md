@@ -1,2 +1,2 @@
 # Spring Boot Example Project
-## Spring Fundamentals
+## Spring Boot Introduction
