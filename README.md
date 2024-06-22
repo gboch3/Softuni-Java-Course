@@ -1,3 +1,3 @@
 # Mobilele Project 
-## State Management Lab
-Session Implementation
+## Events, Scheduling Tasks and Caching Lab
+Implementation
