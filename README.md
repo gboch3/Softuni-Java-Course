@@ -1,2 +1,2 @@
-# Spring Fundamentals Projects
-## Softuni Java Web Course
+# Demo Project
+## Events, Scheduling tasks and caching
