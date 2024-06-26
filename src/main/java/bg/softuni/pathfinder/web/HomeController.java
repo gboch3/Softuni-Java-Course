@@ -18,6 +18,7 @@ public class HomeController {
     public String index(Model model) {
         double sofiaTemp = new Random().nextDouble();
         model.addAttribute("sofiaTemperature", sofiaTemp);
+
         return "index";
     }
 

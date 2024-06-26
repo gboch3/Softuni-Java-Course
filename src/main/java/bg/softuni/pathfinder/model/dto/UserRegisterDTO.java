@@ -1,17 +1,18 @@
-package bg.softuni.pathfinder.web.dto;
+package bg.softuni.pathfinder.model.dto;
 
 import bg.softuni.pathfinder.model.Level;
 import jakarta.validation.constraints.*;
 
 public class UserRegisterDTO {
     @NotBlank
-    @Size(min = 2)
+    @Size(min = 3)
     private String username;
 
     @NotEmpty
     @Size(min = 5)
     private String fullName;
 
+    @NotEmpty
     @Email
     private String email;
 
@@ -19,9 +20,12 @@ public class UserRegisterDTO {
     @Max(90)
     private Integer age;
 
+    @NotEmpty
     @Size(min = 5)
     private String password;
 
+    @NotEmpty
+    @Size(min = 5)
     private String confirmPassword;
 
     private Level level;

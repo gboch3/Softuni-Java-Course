@@ -33,10 +33,10 @@ public class Route {
     @OneToMany(targetEntity = Comment.class, mappedBy = "route")
     private Set<Comment> comments;
 
-    @OneToMany(targetEntity = Picture.class, mappedBy = "route")
+    @OneToMany(targetEntity = Picture.class, mappedBy = "route",fetch = FetchType.EAGER)
     private Set<Picture> pictures;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Category> categories;
 
     public Route() {

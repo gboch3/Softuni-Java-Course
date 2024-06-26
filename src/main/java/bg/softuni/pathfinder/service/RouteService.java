@@ -3,7 +3,7 @@ package bg.softuni.pathfinder.service;
 import bg.softuni.pathfinder.data.RouteRepository;
 import bg.softuni.pathfinder.model.Picture;
 import bg.softuni.pathfinder.model.Route;
-import bg.softuni.pathfinder.service.dto.RouteShortInfoDTO;
+import bg.softuni.pathfinder.model.dto.RouteShortInfoDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,5 +51,9 @@ public class RouteService {
         dto.setImageUrl(first.get().getUrl());
 
         return dto;
+    }
+
+    public Route getRoute(long routeId) {
+        return routeRepository.findById(routeId).orElseThrow();
     }
 }
