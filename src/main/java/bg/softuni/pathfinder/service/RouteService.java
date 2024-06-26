@@ -15,9 +15,9 @@ import java.util.Random;
 @Service
 public class RouteService {
 
-    private RouteRepository routeRepository;
-    private Random random;
-    private ModelMapper modelMapper;
+    private final RouteRepository routeRepository;
+    private final Random random;
+    private final ModelMapper modelMapper;
 
     public RouteService(RouteRepository routeRepository) {
         this.routeRepository = routeRepository;
@@ -41,6 +41,7 @@ public class RouteService {
         Optional<Route> route = routeRepository.findById(randomId);
         if (route.isEmpty()) {
             // throw exception; return empty
+            throw new RuntimeException();
         }
         return mapToShortInfo(route.get());
     }
