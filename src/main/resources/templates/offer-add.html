@@ -15,14 +15,13 @@
 
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'add-offer'})}"></div>
 
-
 <div class="container">
     <h2 class="text-center text-white">Upload Offer</h2>
     <form
-            th:action="@{/offers/add}"
-            th:method="post"
-            th:object="${addOfferDTO}"
-            class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        th:action="@{/offers/add}"
+        th:method="post"
+        th:object="${addOfferDTO}"
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
         <div class="row">
 
             <div class="form-group col-md-6 mb-3">
@@ -41,14 +40,14 @@
                 <label for="price" class="text-white font-weight-bold">Price</label>
                 <input id="price" type="number" min="0" step="100" class="form-control"
                        placeholder="Suggested price"/>
-                <p class="errors alert alert-danger">
+                <p  class="errors alert alert-danger">
                     Suggested price is required.
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-6 mb-3">
-                <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
+                <label class="text-center text-white font-weight-bold" th:for="engineType">Engine</label>
                 <select th:field="*{engineType}"
                         th:errorclass="is-invalid"
                         class="form-control">
@@ -56,10 +55,12 @@
                     <option th:each="type: ${allEngineTypes}"
                             th:value="${type}"
                             th:text="${type}">
-                        Engine type
+                        IMAGINARY ENGINE
                     </option>
+
                 </select>
-                <p class="errors alert alert-danger">
+
+                <p class="invalid-feedback errors alert alert-danger">
                     Engine type is required.
                 </p>
             </div>
@@ -98,24 +99,25 @@
         </div>
 
         <div class="form-group">
-            <label class="text-white font-weight-bold" for="description">Description</label>
+            <label class="text-white font-weight-bold" th:for="description">Description</label>
             <textarea
-                    th:field="*{description}"
-                    th:errorclass="is-invalid"
-                    type="textarea"
-                    class="form-control"
-                    rows="3"
-                    placeholder="Description">
+                th:field="*{description}"
+                th:errorclass="is-invalid"
+                type="textarea"
+                class="form-control"
+                rows="3"
+                placeholder="Description">
             </textarea>
             <p class="invalid-feedback errors alert alert-danger">
                 Description is required and should be at least 5 symbols.
             </p>
 
-            <!--            <small th:each="err : ${#fields.errors('description')}" th:text="${err}" class="text-danger"></small>-->
+<!--            <small th:each="err : ${#fields.errors('description')}" th:text="${err}" class="text-danger"></small>-->
 
-            <!--            Alternative error display-->
-            <!--            <small th:errors="*{description}" class="text-danger">Description error-->
-            <!--            </small>-->
+<!--            Alternative error display-->
+<!--            <small th:errors="*{description}" class="text-danger">Description error-->
+<!--            </small>-->
+
 
         </div>
         <div class="form-group">
@@ -138,7 +140,7 @@
 </div>
 
 <div>
-    <footer></footer>
+    <footer> </footer>
 </div>
 
 </body>
