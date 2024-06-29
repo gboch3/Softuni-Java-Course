@@ -7,17 +7,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Random;
 
-/*
- * Controller handling the info pages - home, about, contact
- */
-
 @Controller
 public class HomeController {
 
     @GetMapping("/")
     public String index(Model model) {
-        double sofiaTemp = new Random().nextDouble();
+        int sofiaTemp = new Random().nextInt(10,30);
+        int sozopolTemp = new Random().nextInt(10,30);
         model.addAttribute("sofiaTemperature", sofiaTemp);
+        model.addAttribute("sozopolTemperature", sozopolTemp);
 
         return "index";
     }

@@ -5,7 +5,6 @@ import bg.softuni.pathfinder.model.User;
 import bg.softuni.pathfinder.model.dto.UserLoginDTO;
 import bg.softuni.pathfinder.model.dto.UserProfileDTO;
 import bg.softuni.pathfinder.model.dto.UserRegisterDTO;
-import jakarta.validation.constraints.Size;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -36,17 +35,20 @@ public class UserService {
         this.userRepository.save(user);
     }
 
-    public void login(UserLoginDTO loginData) {
+    public boolean login(UserLoginDTO loginData) {
         User user = userRepository.findByUsername(loginData.getUsername());
 
         if (user == null) {
-            // TODO throw error
-            throw new RuntimeException("Username not found");
+            return false;
         }
 
-        if (passwordEncoder.matches(loginData.getPassword(), user.getPassword())) {
-            currentUser.setUser(user);
+        if (!passwordEncoder.matches(loginData.getPassword(), user.getPassword())) {
+            return false;
         }
+
+        currentUser.setUser(user);
+
+        return true;
     }
 
     public void logout() {

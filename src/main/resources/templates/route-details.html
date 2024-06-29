@@ -8,8 +8,8 @@
 
     <input type="hidden" name="routeId" id="routeId">
     <div
-         class="details-main"
-         th:object="${routeData}"
+            class="details-main"
+            th:object="${routeData}"
     >
         <section class="route-info text-center">
             <h4
@@ -61,9 +61,11 @@
                     </div>
                 </form>
             </div>
-        </section
-                >
+
+        </section>
+
         <section id="map" th:value="*{gpxCoordinates}"></section>
+
         <section id="video">
             <iframe id="frame" th:src="@{'https://www.youtube.com/embed/'+*{videoUrl}}">
             </iframe>

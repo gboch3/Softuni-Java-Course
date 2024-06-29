@@ -2,7 +2,6 @@ package bg.softuni.pathfinder.service;
 
 import bg.softuni.pathfinder.model.User;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.annotation.SessionScope;
 
 @Component
