@@ -5,6 +5,7 @@ plugins {
 }
 
 group = 'bg.softuni'
+description = 'Rest API and REST with Spring'
 version = '0.0.1-SNAPSHOT'
 
 java {
