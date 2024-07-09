@@ -1,2 +1,2 @@
 # Mobilele Project
-## Spring Security Lab
+## Spring Security Implementation Lab
