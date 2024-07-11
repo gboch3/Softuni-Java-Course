@@ -9,6 +9,7 @@ import bg.softuni.pathfinder.model.Route;
 import bg.softuni.pathfinder.model.dto.AddRouteDTO;
 import bg.softuni.pathfinder.model.dto.RouteInfoDTO;
 import bg.softuni.pathfinder.model.dto.RouteShortInfoDTO;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,21 +27,14 @@ import java.util.Optional;
 import java.util.Random;
 
 @Service
+@RequiredArgsConstructor
 public class RouteService {
 
     private final RouteRepository routeRepository;
-    private final Random random;
+    private final Random random = new Random();
     private final ModelMapper modelMapper;
-    private final CurrentUser currentUser;
+    private final UserHelperService userHelperService;
     private final CategoryRepository categoryRepository;
-
-    public RouteService(RouteRepository routeRepository, CurrentUser currentUser, CategoryRepository categoryRepository) {
-        this.routeRepository = routeRepository;
-        this.currentUser = currentUser;
-        this.categoryRepository = categoryRepository;
-        this.modelMapper = new ModelMapper();
-        this.random = new Random();
-    }
 
     @Transactional
     public List<RouteShortInfoDTO> getAll() {
@@ -82,7 +76,7 @@ public class RouteService {
 
         Category category = this.categoryRepository.findCategoryByName(data.getCategoryType());
         route.getCategories().add(category);
-        route.setAuthor(currentUser.getUser());
+        route.setAuthor(userHelperService.getUser());
         this.routeRepository.save(route);
 
 
@@ -91,7 +85,7 @@ public class RouteService {
 
             // originalFilename, fileLocation ->  /uploads/{userId}/{fileId}.{ext}
             Path destinationFile = Paths
-                    .get("src", "main", "resources", "static", "uploads", String.valueOf(currentUser.getUser().getId()), route.getId() + ".gpx")
+                    .get("src", "main", "resources", "static", "uploads", String.valueOf(userHelperService.getUser().getId()), route.getId() + ".gpx")
                     .normalize();
                   //.toAbsolutePath()
 

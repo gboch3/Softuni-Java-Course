@@ -3,6 +3,7 @@ package bg.softuni.pathfinder.web;
 import bg.softuni.pathfinder.model.CategoryType;
 import bg.softuni.pathfinder.model.dto.RouteShortInfoDTO;
 import bg.softuni.pathfinder.service.RouteService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,13 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class RoutesByCategoryController {
 
     private final RouteService routeService;
-
-    public RoutesByCategoryController(RouteService routeService) {
-        this.routeService = routeService;
-    }
 
     @GetMapping("/pedestrian")
     public ModelAndView viewPedestrian() {

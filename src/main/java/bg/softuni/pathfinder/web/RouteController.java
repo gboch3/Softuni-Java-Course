@@ -5,9 +5,9 @@ import bg.softuni.pathfinder.model.Level;
 import bg.softuni.pathfinder.model.dto.AddRouteDTO;
 import bg.softuni.pathfinder.model.dto.RouteInfoDTO;
 import bg.softuni.pathfinder.model.dto.RouteShortInfoDTO;
-import bg.softuni.pathfinder.service.CurrentUser;
 import bg.softuni.pathfinder.service.RouteService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,14 +20,9 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class RouteController {
     private final RouteService routeService;
-    private final CurrentUser currentUser;
-
-    public RouteController(RouteService routeService, CurrentUser currentUser) {
-        this.routeService = routeService;
-        this.currentUser = currentUser;
-    }
 
     @ModelAttribute("addRouteData")
     public AddRouteDTO addRouteData() {
@@ -53,11 +48,13 @@ public class RouteController {
 
         ModelAndView modelAndView = new ModelAndView("add-route");
 
-        if (!currentUser.isLoggedIn()) {
+/*
+        if (!userHelperService.isAuthenticated()) {
             modelAndView.setViewName("redirect:/users/login");
 
             return modelAndView;
         }
+*/
 
         modelAndView.addObject("route", new RouteShortInfoDTO());
         modelAndView.addObject("levels", Level.values());
