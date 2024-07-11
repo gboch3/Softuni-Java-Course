@@ -1,2 +1,3 @@
 # Pathfinder Project 
-## Workshop Spring Security Implementation
+## Workshop Spring Security
+
